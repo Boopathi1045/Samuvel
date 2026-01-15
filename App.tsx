@@ -185,8 +185,14 @@ const Header: React.FC<{
   onLogout: () => void;
   onChangePass: () => void;
 }> = ({ isAdmin, onLoginClick, onLogout, onChangePass }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path;
+
+  // Close menu on navigation
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <header className="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 dark:border-white/10 px-6 md:px-20 py-4">
@@ -196,6 +202,8 @@ const Header: React.FC<{
           <h2 className="text-lg font-bold leading-tight tracking-tight font-display hidden sm:block">Adv. J. Samuvel</h2>
           <h2 className="text-lg font-bold leading-tight tracking-tight font-display sm:hidden">Samuvel</h2>
         </Link>
+
+        {/* Desktop Navigation */}
         <div className="flex flex-1 justify-end gap-8 items-center">
           <nav className="hidden md:flex items-center gap-9">
             <Link to="/" className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/') ? 'text-primary border-b-2 border-primary' : ''}`}>Profile</Link>
@@ -203,6 +211,7 @@ const Header: React.FC<{
             <Link to="/articles" className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/articles') || location.pathname.startsWith('/articles/') ? 'text-primary border-b-2 border-primary' : ''}`}>Articles</Link>
             <Link to="/contact" className={`text-sm font-medium transition-colors hover:text-primary ${isActive('/contact') ? 'text-primary border-b-2 border-primary' : ''}`}>Contact</Link>
           </nav>
+          
           <div className="flex items-center gap-4">
             {isAdmin ? (
               <div className="flex items-center bg-primary/10 rounded-lg p-1 border border-primary/20">
@@ -229,12 +238,46 @@ const Header: React.FC<{
                 Admin Log-in
               </button>
             )}
-            <Link to="/contact" className="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded bg-primary text-white text-sm font-bold h-10 px-5 transition-transform hover:scale-[1.02] active:scale-[0.98]">
+            <Link to="/contact" className="hidden xs:flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded bg-primary text-white text-sm font-bold h-10 px-5 transition-transform hover:scale-[1.02] active:scale-[0.98]">
               Consult Now
             </Link>
+            
+            {/* Mobile Menu Button */}
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden flex items-center justify-center w-10 h-10 text-primary transition-transform active:scale-90"
+            >
+              <span className="material-symbols-outlined text-3xl">
+                {isMobileMenuOpen ? 'close' : 'menu'}
+              </span>
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Navigation Overlay */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-background-dark border-b border-primary/10 shadow-xl overflow-hidden animate-in slide-in-from-top duration-300">
+          <nav className="flex flex-col p-6 gap-6">
+            <Link to="/" className={`text-lg font-bold font-display ${isActive('/') ? 'text-primary' : 'opacity-70'}`}>Profile</Link>
+            <Link to="/achievements" className={`text-lg font-bold font-display ${isActive('/achievements') ? 'text-primary' : 'opacity-70'}`}>Achievements</Link>
+            <Link to="/articles" className={`text-lg font-bold font-display ${isActive('/articles') || location.pathname.startsWith('/articles/') ? 'text-primary' : 'opacity-70'}`}>Articles</Link>
+            <Link to="/contact" className={`text-lg font-bold font-display ${isActive('/contact') ? 'text-primary' : 'opacity-70'}`}>Contact</Link>
+            <div className="h-[1px] bg-primary/10 w-full my-2"></div>
+            {!isAdmin && (
+              <button 
+                onClick={onLoginClick}
+                className="text-left text-sm font-bold uppercase tracking-widest text-primary"
+              >
+                Admin Log-in
+              </button>
+            )}
+            <Link to="/contact" className="flex items-center justify-center rounded bg-primary text-white text-sm font-bold h-12 px-5 mt-2">
+              Consult Now
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
