@@ -1,6 +1,7 @@
 import React from 'react';
 import { PRACTICE_AREAS } from '../constants';
 import { Link } from 'react-router-dom';
+import ProfileImg from './Profile.jpeg';
 
 const HomeView: React.FC = () => {
   return (
@@ -38,7 +39,7 @@ const HomeView: React.FC = () => {
                 <div className="absolute -inset-4 bg-primary/10 rounded-xl -rotate-2 transition-transform group-hover:rotate-0"></div>
                 <div 
                   className="relative w-full aspect-[4/5] bg-center bg-no-repeat bg-cover rounded-lg shadow-2xl border-4 border-white dark:border-background-dark" 
-                  style={{ backgroundImage: "url('./Profile.jpeg')" }}
+                  style={{ backgroundImage: `url(${ProfileImg})` }} // Change from './Profile.jpeg' to ProfileImg
                 ></div>
                 <div className="absolute bottom-6 -left-6 bg-white dark:bg-background-dark p-6 rounded shadow-xl border border-primary/10 hidden md:block">
                   <p className="text-primary font-bold text-2xl">Proven</p>
