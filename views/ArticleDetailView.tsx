@@ -220,7 +220,7 @@ const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({ articles, isAdmin
           <div className="mt-20 p-8 bg-zinc-50 dark:bg-zinc-900 border border-primary/10 rounded flex flex-col md:flex-row gap-8 items-center">
             <div 
               className="w-24 h-24 rounded-full bg-cover bg-center shrink-0 border-2 border-primary/20" 
-              style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6MAMkCon1B-XW5OUoTqacHwad50hBQAGkDVQRDN7VsAU119_CLSaMRaqzxL8YOG6gW5rFDvTVwsfr79gC2OQQ7Ii7a7ynjxOnL3hx6NH1hKs9lACTGKd-DJCrIVptf8C99sMheLYk0AY9oT0YhhiWBsjFY3jcQ9-pnlSSU5io8qD2qUC-mH24_TGSpD2BnJcZbgnBZ5i5iwLpb5zHZ6jFaisuiiBXG8nlknhhvvvP8AiluYvEeY3EUlEO_2Sw6bh_IG7cm_bNpHz4')" }}
+              style={{ backgroundImage: "url('WhatsApp Image 2026-01-16 at 4.57.34 PM.jpeg')" }}
             ></div>
             <div className="text-center md:text-left">
               <h4 className="text-xl font-bold font-display mb-2">Adv. J. Samuvel BA., LL.B</h4>
