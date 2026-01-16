@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { PRACTICE_AREAS } from '../constants';
 import { Link } from 'react-router-dom';
@@ -39,7 +38,7 @@ const HomeView: React.FC = () => {
                 <div className="absolute -inset-4 bg-primary/10 rounded-xl -rotate-2 transition-transform group-hover:rotate-0"></div>
                 <div 
                   className="relative w-full aspect-[4/5] bg-center bg-no-repeat bg-cover rounded-lg shadow-2xl border-4 border-white dark:border-background-dark" 
-                  style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6MAMkCon1B-XW5OUoTqacHwad50hBQAGkDVQRDN7VsAU119_CLSaMRaqzxL8YOG6gW5rFDvTVwsfr79gC2OQQ7Ii7a7ynjxOnL3hx6NH1hKs9lACTGKd-DJCrIVptf8C99sMheLYk0AY9oT0YhhiWBsjFY3jcQ9-pnlSSU5io8qD2qUC-mH24_TGSpD2BnJcZbgnBZ5i5iwLpb5zHZ6jFaisuiiBXG8nlknhhvvvP8AiluYvEeY3EUlEO_2Sw6bh_IG7cm_bNpHz4')" }}
+                  style={{ backgroundImage: "url('WhatsApp Image 2026-01-16 at 4.57.34 PM.jpeg')" }}
                 ></div>
                 <div className="absolute bottom-6 -left-6 bg-white dark:bg-background-dark p-6 rounded shadow-xl border border-primary/10 hidden md:block">
                   <p className="text-primary font-bold text-2xl">Proven</p>
