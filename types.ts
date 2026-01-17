@@ -1,4 +1,6 @@
 
+/// <reference types="vite/client" />
+
 export interface Article {
   id: string;
   title: string;
@@ -30,4 +32,24 @@ export interface PracticeArea {
   title: string;
   description: string;
   imageUrl: string;
+}
+
+declare module '*.jpg' {
+  const src: string;
+  export default src;
+}
+
+declare module '*.jpeg' {
+  const src: string;
+  export default src;
+}
+
+declare module '*.png' {
+  const src: string;
+  export default src;
+}
+
+declare module '*.svg' {
+  const src: string;
+  export default src;
 }

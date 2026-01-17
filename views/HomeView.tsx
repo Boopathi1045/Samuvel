@@ -1,7 +1,7 @@
 import React from 'react';
 import { PRACTICE_AREAS } from '../constants';
 import { Link } from 'react-router-dom';
-import ProfileImg from './Profile.jpeg';
+import ProfileImg from '../assets/Profile.jpeg';
 
 const HomeView: React.FC = () => {
   return (

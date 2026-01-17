@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Article, Category } from '../types';
+import ProfileImg from '../assets/Profile.jpeg';
 
 interface ArticleDetailViewProps {
   articles: Article[];
@@ -220,7 +221,7 @@ const ArticleDetailView: React.FC<ArticleDetailViewProps> = ({ articles, isAdmin
           <div className="mt-20 p-8 bg-zinc-50 dark:bg-zinc-900 border border-primary/10 rounded flex flex-col md:flex-row gap-8 items-center">
             <div 
               className="w-24 h-24 rounded-full bg-cover bg-center shrink-0 border-2 border-primary/20" 
-              style={{ backgroundImage: "url('WhatsApp Image 2026-01-16 at 4.57.34 PM.jpeg')" }}
+              style={{ backgroundImage: `url(${ProfileImg})` }} 
             ></div>
             <div className="text-center md:text-left">
               <h4 className="text-xl font-bold font-display mb-2">Adv. J. Samuvel BA., LL.B</h4>
